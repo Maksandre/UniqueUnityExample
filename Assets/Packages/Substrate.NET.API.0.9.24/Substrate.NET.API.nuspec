@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Substrate.NET.API</id>
+    <version>0.9.24</version>
+    <authors>Substrate Gaming</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <projectUrl>https://github.com/SubstrateGaming</projectUrl>
+    <description>Substrate Core .NET API</description>
+    <repository type="git" url="https://github.com/SubstrateGaming/Substrate.NET.API" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Blake2Core" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Chaos.NaCl.Standard" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Extensions.Data.xxHash.core20" version="1.0.2.1" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.3" exclude="Build,Analyzers" />
+        <dependency id="Serilog" version="3.0.1" exclude="Build,Analyzers" />
+        <dependency id="SerilogTraceListener" version="3.2.0" exclude="Build,Analyzers" />
+        <dependency id="StreamJsonRpc" version="2.16.36" exclude="Build,Analyzers" />
+        <dependency id="Substrate.NET.Schnorrkel" version="1.2.2" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Blake2Core" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Chaos.NaCl.Standard" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Extensions.Data.xxHash.core20" version="1.0.2.1" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.3" exclude="Build,Analyzers" />
+        <dependency id="Serilog" version="3.0.1" exclude="Build,Analyzers" />
+        <dependency id="SerilogTraceListener" version="3.2.0" exclude="Build,Analyzers" />
+        <dependency id="StreamJsonRpc" version="2.16.36" exclude="Build,Analyzers" />
+        <dependency id="Substrate.NET.Schnorrkel" version="1.2.2" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="Blake2Core" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Chaos.NaCl.Standard" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Extensions.Data.xxHash.core20" version="1.0.2.1" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.3" exclude="Build,Analyzers" />
+        <dependency id="Serilog" version="3.0.1" exclude="Build,Analyzers" />
+        <dependency id="SerilogTraceListener" version="3.2.0" exclude="Build,Analyzers" />
+        <dependency id="StreamJsonRpc" version="2.16.36" exclude="Build,Analyzers" />
+        <dependency id="Substrate.NET.Schnorrkel" version="1.2.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

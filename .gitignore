@@ -97,13 +97,3 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
-
-
-Assets/NuGet
-Assets/Packages
-Assets/Plugins
-.idea
-Assets/NuGet.config*
-Assets/NuGet.meta
-Assets/Packages.meta
-Assets/Plugins.meta
