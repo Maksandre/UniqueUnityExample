@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d3f1e30de35eff54cbd6a233282a3b4b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273535
+  packageName: Polkadot SDK for Unity
+  packageVersion: 0.3.0
+  assetPath: Assets/Polkadot Unity SDK/Resources/Fonts & Materials/Aeonik-Regular
+    SDF.asset
+  uploadId: 639023

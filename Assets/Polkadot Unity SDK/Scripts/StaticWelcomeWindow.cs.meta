@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 936bc57151d4f1645944ca7248a22195
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273535
+  packageName: Polkadot SDK for Unity
+  packageVersion: 0.3.0
+  assetPath: Assets/Polkadot Unity SDK/Scripts/StaticWelcomeWindow.cs
+  uploadId: 639023

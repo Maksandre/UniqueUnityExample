@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 004baaf6a8a5ac34ab98b264b914031e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273535
+  packageName: Polkadot SDK for Unity
+  packageVersion: 0.3.0
+  assetPath: Assets/Polkadot Unity SDK/Resources/Fonts & Materials/Happy Chicken
+    SDF.asset
+  uploadId: 639023

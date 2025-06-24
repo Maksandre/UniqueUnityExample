@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0f3005e7e40a9c147886ce870b1ac24b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273535
+  packageName: Polkadot SDK for Unity
+  packageVersion: 0.3.0
+  assetPath: Assets/Polkadot Unity SDK/Scripts/Logging/LogManager.cs
+  uploadId: 639023

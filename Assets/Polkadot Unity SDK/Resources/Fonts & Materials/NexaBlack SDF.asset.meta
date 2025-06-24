@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a2dd3624634217042a76fdf9652a2e60
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273535
+  packageName: Polkadot SDK for Unity
+  packageVersion: 0.3.0
+  assetPath: Assets/Polkadot Unity SDK/Resources/Fonts & Materials/NexaBlack SDF.asset
+  uploadId: 639023
