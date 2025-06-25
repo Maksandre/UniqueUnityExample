@@ -28,25 +28,22 @@ public class UniqueNetworkExample : MonoBehaviour
 
     [Header("Network Settings")]
     [SerializeField] private string wsEndpoint = "wss://ws.unique.network";
-        
+
     private SubstrateClientExt _client;
     private bool _isConnected;
     private Account _account;
-    private CancellationTokenSource _cts;
     private bool _isInitialized;
 
     private async void Start()
     {
         try
         {
-            if (connectButton != null)
-                connectButton.onClick.AddListener(ConnectToNetwork);
-            
-            if (sendButton != null)
-                sendButton.onClick.AddListener(SendTransaction);
-            
-            _cts = new CancellationTokenSource();
-            
+            connectButton?.onClick.AddListener(ConnectToNetwork);
+            sendButton?.onClick.AddListener(SendTransaction);
+            mnemonicInput?.onValueChanged.AddListener(OnMnemonicChanged);
+
+            OnMnemonicChanged(mnemonicInput?.text ?? "");
+
             if (statusText != null)
                 statusText.text = "Enter mnemonic and click Connect";
         }
@@ -76,7 +73,7 @@ public class UniqueNetworkExample : MonoBehaviour
             }
 
             _account = Mnemonic.GetAccountFromMnemonic(accountMnemonic, "", KeyType.Sr25519);
-                
+
             if (_account == null)
             {
                 throw new Exception("Failed to create account");
@@ -84,8 +81,8 @@ public class UniqueNetworkExample : MonoBehaviour
 
             // Initialize the SubstrateNetwork client
             _client = new SubstrateClientExt(new Uri(wsEndpoint), ChargeTransactionPayment.Default());
-            await _client.ConnectAsync(true, true, _cts.Token);
-                
+            await _client.ConnectAsync(true, true, destroyCancellationToken);
+
             if (!_client.IsConnected)
             {
                 throw new Exception("Failed to connect to network");
@@ -93,20 +90,20 @@ public class UniqueNetworkExample : MonoBehaviour
 
             _isConnected = true;
             _isInitialized = true;
-                
+
             if (statusText != null)
                 statusText.text = $"Connected to Unique Network! Account: {Utils.GetAddressFrom(_account.Bytes)}";
-                
+
             InvokeRepeating(nameof(CheckConnection), 2.0f, 2.0f);
         }
         catch (Exception ex)
         {
             _isInitialized = false;
             _isConnected = false;
-                
+
             if (statusText != null)
                 statusText.text = $"Failed: {ex.Message}";
-                
+
             Debug.LogError($"Connection error: {ex}");
         }
     }
@@ -137,17 +134,26 @@ public class UniqueNetworkExample : MonoBehaviour
         acc.Create(KeyType.Sr25519, Utils.GetPublicKeyFrom(recipientAddressInput.text));
 
         var account32 = acc.ToAccountId32();
-            
+
         var multiAddress = new EnumMultiAddress();
         multiAddress.Create(MultiAddress.Id, account32);
 
         // amount
         var amount = new BaseCom<U128>();
-        amount.Create(ulong.Parse(amountInput.text));
-            
+        try
+        {
+            amount.Create(ulong.Parse(amountInput.text));
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Invalid amount: {e.Message}");
+            if (statusText != null)
+                statusText.text = "Invalid amount";
+            return;
+        }
         Debug.Log($"Sending {Utils.GetAddressFrom(acc.Bytes)}: {amount.Value.Value}");
         var transferKeepAlive = BalancesCalls.TransferKeepAlive(multiAddress, amount);
-            
+
         _ = SendTransactionAsync(transferKeepAlive);
     }
 
@@ -160,9 +166,9 @@ public class UniqueNetworkExample : MonoBehaviour
             return;
         }
 
-        await GenericExtrinsicAsync(_client, extrinsicMethod, CancellationToken.None);
+        await GenericExtrinsicAsync(_client, extrinsicMethod, destroyCancellationToken);
     }
-        
+
     private async Task GenericExtrinsicAsync(SubstrateClientExt client, Method extrinsicMethod,
         CancellationToken token)
     {
@@ -182,7 +188,7 @@ public class UniqueNetworkExample : MonoBehaviour
             throw;
         }
     }
-        
+
     private void ActionExtrinsicUpdate(string subscriptionId, ExtrinsicStatus extrinsicUpdate)
     {
         var broadcast = extrinsicUpdate.Broadcast != null ? string.Join(",", extrinsicUpdate.Broadcast) : "";
@@ -198,16 +204,25 @@ public class UniqueNetworkExample : MonoBehaviour
         });
     }
 
+    private void OnMnemonicChanged(string value)
+    {
+        // TODO: Validate mnemonic format if needed
+        if (connectButton != null)
+            connectButton.interactable = !string.IsNullOrWhiteSpace(value);
+    }
+
+
     private void OnDestroy()
     {
-        _cts?.Cancel();
-        _cts?.Dispose();
+        connectButton?.onClick.RemoveListener(ConnectToNetwork);
+        sendButton?.onClick.RemoveListener(SendTransaction);
+        mnemonicInput?.onValueChanged.RemoveListener(OnMnemonicChanged);
 
         _client = null;
         _account = null;
         _isInitialized = false;
         _isConnected = false;
-            
+
         CancelInvoke(nameof(CheckConnection));
     }
 }
