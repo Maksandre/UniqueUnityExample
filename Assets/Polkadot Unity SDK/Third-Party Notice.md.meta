@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 18c294fb807fee347a55d0814a52f952
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273535
+  packageName: Polkadot SDK for Unity
+  packageVersion: 0.3.0
+  assetPath: Assets/Polkadot Unity SDK/Third-Party Notice.md
+  uploadId: 639023

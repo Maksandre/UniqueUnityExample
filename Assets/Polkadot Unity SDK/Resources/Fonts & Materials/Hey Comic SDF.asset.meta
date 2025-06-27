@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 557e29b7ec4daca4fb38f95613b96846
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273535
+  packageName: Polkadot SDK for Unity
+  packageVersion: 0.3.0
+  assetPath: Assets/Polkadot Unity SDK/Resources/Fonts & Materials/Hey Comic SDF.asset
+  uploadId: 639023

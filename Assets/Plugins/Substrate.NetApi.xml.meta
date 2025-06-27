@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1df8415bad4a5b940980ad6fc89db0d4
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273535
+  packageName: Polkadot SDK for Unity
+  packageVersion: 0.3.0
+  assetPath: Assets/Plugins/Substrate.NetApi.xml
+  uploadId: 639023
