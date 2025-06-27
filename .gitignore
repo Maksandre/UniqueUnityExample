@@ -1,4 +1,4 @@
-# This .gitignore file should be placed at the root of your Unity project directory
+BB# This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
@@ -17,7 +17,7 @@
 *.blend1.meta
 
 # MemoryCaptures can get excessive in size.
-# They also could contain extremely sensitive data
+# BThey also could contain extremely sensitive data
 /[Mm]emoryCaptures/
 
 # Recordings can get excessive in size
@@ -99,3 +99,16 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 
 .idea
+
+# NuGet packages and dependencies
+/[Aa]ssets/Packages/
+/[Aa]ssets/NuGet/
+/[Aa]ssets/packages.config*
+
+# Third-party plugins and DLLs (usually regenerated)
+/[Aa]ssets/Plugins/NetApi/
+/[Aa]ssets/Plugins/*.dll*
+
+# TextMesh Pro (auto-imported package)
+/[Aa]ssets/TextMesh Pro/
+
